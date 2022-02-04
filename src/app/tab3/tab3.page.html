@@ -1,0 +1,31 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
+
+
+<ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-text-center custom-font" style="padding-top: 18px;">
+            Post salvati
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+            refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <div class="container">
+        <center>
+            <div class="card" id="cardEvento" *ngFor="let data of this.favs" (click)="dataPassi(data)">
+                <h2> {{ this.data.titolo.slice(1, -1)}} </h2>
+                <p>{{ this.data["data"]}}</p>
+            </div>
+        </center>
+    </div>
+
+
+</ion-content>

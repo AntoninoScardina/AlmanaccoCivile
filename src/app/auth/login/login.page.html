@@ -1,0 +1,55 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
+
+
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-text-center custom-font">Accedi</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+
+
+    <div class="ion-padding">
+
+        <form class="ion-padding">
+
+
+
+
+            <div class="wrap-input">
+                <input class="input" type="text" name="nickname" placeholder="nickname" [(ngModel)]="nickname">
+            </div>
+
+            <div class="wrap-input">
+                <input class="input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </div>
+
+
+
+            <div class="container-form-btn">
+                <button class="form-btn-cancel custom-font" style="text-transform: uppercase;" (click)="Registrati()">
+          R<span style="text-transform: lowercase;">egistrati</span>
+        </button>
+                <div class="divider"></div>
+                <button class="form-btn custom-font" (click)="Accedi()">
+          A<span style="text-transform: lowercase;">ccedi</span>
+        </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="logo">
+
+        <img src="../../../assets/wave.svg" alt="">
+
+        <div class="myColor">
+            <img src="../../../assets/Logo.png" class="imgLogo" width="100px" height="100px" alt="">
+            <p class="footerText custom-font">Almanacco Civile - ©2021</p>
+        </div>
+    </div>
+
+</ion-content>

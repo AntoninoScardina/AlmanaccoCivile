@@ -1,0 +1,63 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
+
+
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-text-center custom-font">Registrazione</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+    <div class="ion-padding">
+
+        <form class="ion-padding form">
+
+            <div class="wrap-input">
+                <input class="input" type="text" name="nickname" placeholder="Nickname" [(ngModel)]="nickname">
+            </div>
+
+            <div class="wrap-input">
+                <input class="input" type="text" name="name" placeholder="Nome" [(ngModel)]="nome">
+            </div>
+
+            <div class="wrap-input">
+                <input class="input" type="text" name="surname" placeholder="Cognome" [(ngModel)]="cognome">
+            </div>
+
+            <div class="wrap-input">
+                <input class="input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </div>
+
+            <div class="container-form-btn">
+                <button class="form-btn-cancel custom-font" style="text-transform: uppercase;" (click)="homepagescreen()">
+                    A<span style="text-transform: lowercase;">ccedi</span>
+                </button>
+                <div class="divider"></div>
+                <button class="form-btn custom-font" (click)="registrati()">
+                    R<span style="text-transform: lowercase;">egistrati</span>
+                </button>
+            </div>
+            <br>
+
+            <div class="container-form-btn-guest" style="z-index: 2;position: absolute;">
+                <button class="form-btn custom-font" (click)="GuestAccess()">
+                    E<span style="text-transform: lowercase;">ntra come utente</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="logo">
+
+        <img src="../../../assets/wave.svg" alt="" style="z-index: 0;">
+
+        <div class="myColor">
+            <img src="../../../assets/Logo.png" class="imgLogo" width="100px" height="100px" alt="">
+            <p class="footerText custom-font">Almanacco Civile - ©2021</p>
+        </div>
+    </div>
+
+</ion-content>

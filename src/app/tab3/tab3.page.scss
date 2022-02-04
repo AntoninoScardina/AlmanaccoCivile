@@ -1,0 +1,54 @@
+.custom-font{
+    font-weight: 800;
+    font-family: 'Hind', sans-serif;
+}
+ ion-content{
+  
+    --background: rgb(235, 235, 235);
+   
+.card {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px 100px 25px 20px;
+    color: black;
+    position: relative;
+    width: 50%;
+    max-height: 70px;
+    transform: scale(0.8);
+    background-color: white;
+    border-radius: 10px;
+    
+    
+  }
+  
+  .card h2 {
+    color: black;
+    font-family: 'Hind', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    margin: 10px 0px 8px -2px;
+  }
+  
+  
+  
+  
+  .card .el {
+    vertical-align: -2px;
+    opacity: 0.3;
+    margin-left: -5px;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .card {  
+      width: calc(50% - 170px);
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .card {  
+      width: 100% - 10%;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar style="--background: #2f3438;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="container">
+        <div class="movie">
+            <img class="movie-img" src="{{ this.eventData.path_immagine }}">
+            <div class="text-movie-cont">
+                <div class="mr-grid">
+                    <div class="col1">
+                        <h1>{{ this.eventData.titolo.slice(0, -1) }}</h1>
+                        <ul class="movie-gen ">
+                            <li>{{ this.eventData.data }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mr-grid summary-row ">
+                    <div class="col2 ">
+                        <h5 style="font-weight: 600; font-size: medium; margin-top: 5px;">DESCRIZIONE</h5>
+                    </div>
+                    <div class="col2 "></div>
+                </div>
+                <div class="mr-grid ">
+                    <br>
+                    <div class="col1 ">
+                        <p ng-bind-html="content " class="movie-description ">
+                            {{ this.eventData.descrizione }}
+                        </p>
+                    </div>
+                </div>
+                <div class="mr-grid action-row ">
+                    <div class="col2 ">
+                    </div>
+                    <div class="col2 action-btn " (click)="AORFavorite() ">
+                        <i class="material-icons ">
+                            <ion-icon name="{{iconName}}"></ion-icon>
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <ion-tabs style="position: sticky; ">
+        <ion-tab-bar slot="bottom ">
+            <ion-tab-button tab="tab1" [routerLink]="[ '/tabs/tab1/'] ">
+                <fa-icon icon="home" style="font-size: 25px; "></fa-icon>
+            </ion-tab-button>
+
+            <ion-tab-button tab="tab2" [routerLink]="[ '/tabs/tab2/'] ">
+                <fa-icon icon="fire" style="font-size: 25px; "></fa-icon>
+            </ion-tab-button>
+
+            <ion-tab-button tab="tab3" [routerLink]="[ '/tabs/tab3/'] ">
+                <fa-icon icon="bookmark" style="font-size: 25px; "></fa-icon>
+            </ion-tab-button>
+
+            <ion-tab-button tab="info" (click)="info() ">
+                <fa-icon icon="info-circle" style="font-size: 25px; "></fa-icon>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+
+</ion-content>

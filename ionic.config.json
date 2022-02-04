@@ -1,0 +1,7 @@
+{
+  "name": "Almanacco",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-searchbar showCancelButton="always" class="searchbar" placeholder="Cerca giorno" showCancelButton="never"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="light " id="body">
+
+
+    <div class="calendar">
+        <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+                <span id="year">2021</span>
+            </div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-week-day">
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mer</div>
+                <div>Gio</div>
+                <div>Ven</div>
+                <div>Sab</div>
+                <div>Dom</div>
+            </div>
+            <div class="calendar-days" (click)="getEvents()"></div>
+        </div>
+        <div class="month-list"></div>
+    </div>
+
+    <div class="container">
+        <center>
+            <div class="card" id="cardEvento" *ngFor="let data of this.eventsData" (click)="dataPassi(data)">
+                <h2> {{ data.titolo }} </h2>
+                <p>{{ data["data"]}}</p>
+            </div>
+        </center>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function getEvents() {
+            const giornoMeseAnno = document.querySelector('#clicked').textContent.trim() + ' ' + document.querySelector('#month-picker').textContent + ' ' + document.querySelector('#year').textContent;
+            axios.get(`http://185.25.207.172:3300/event/${giornoMeseAnno.split(' ')[0]}`)
+                .then(res => {
+                    this.eventsData = res.data['events'];
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+    </script>
+
+
+</ion-content>

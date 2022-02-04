@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+}
+
+ion-content {
+    --overflow: hidden;
+    --color: black;
+    --background: white;
+}
+
+ion-title {
+    font-size: medium;
+    padding: 10px;
+}
+
+ion-tabs {
+    z-index: -10000;
+}
+
+$accent-color: #e7e7e7;
+$brand-color:#fe4141;
+$brand-color:#2f3438;
+$dark-color: #05010f;
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    position: absolute;
+    right: 12px;
+    top: 6px;
+    z-index: 999;
+    i {
+        font-size: 40px;
+        color: $brand-color;
+        filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, .5));
+    }
+}
+
+.movie-img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    z-index: 111 !important;
+    position: relative;
+    max-height: 300px;
+    max-width: 200px;
+    border-radius: 12px;
+}
+
+.movie {
+    z-index: 1 !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+.text-movie-cont {
+    padding: 0px 12px;
+    text-align: left;
+}
+
+.action-btn {
+    text-align: right;
+    i {
+        color: $brand-color;
+        font-size: 28px;
+        text-align: right;
+    }
+}
+
+.watch-btn {
+    h3 {
+        i {
+            font-size: 14px;
+            margin-right: 2px;
+            position: relative;
+            float: left;
+            line-height: 1;
+        }
+    }
+    display:block;
+    border:1px solid $brand-color;
+    border-radius:5px;
+    padding:7px;
+    width:140px;
+}
+
+.action-row {
+    margin-top: 24px;
+}
+
+.summary-row {
+    margin-top: 12px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+$heading-font-family: 'Montserrat',
+sans-serif;
+$paragraph-font-family: 'Open Sans',
+sans-serif;
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$font-regular: 400;
+$mont-bold: 700;
+$text-movie-title:20px;
+$text-summary:12px;
+$text-action-btn:14px;
+$text-movie-description:12px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $heading-font-family;
+    // color: $accent-color;
+    margin: 0px;
+}
+
+h1 {
+    font-size: $text-movie-title;
+    font-weight: $font-regular;
+}
+
+h3 {
+    font-size: $text-action-btn;
+    font-weight: $font-regular;
+    // color: $brand-color;
+}
+
+h5 {
+    font-size: $text-summary;
+    font-weight: $font-regular;
+}
+
+.movie-gen {
+    margin: 0px;
+    padding: 0px;
+    li {
+        font-size: 16px;
+        // color: darken( $accent-color, 40%);
+        width: auto;
+        display: block;
+        float: left;
+        margin-right: 6px;
+        margin-top: 12px;
+        font-weight: 600;
+    }
+}
+
+.movie-likes {
+    @extend .movie-gen;
+    float: right;
+    li {
+        color: $brand-color;
+        &:last-child {
+            margin-right: 0px;
+        }
+        i {
+            font-size: 14px;
+            margin-right: 4px;
+            position: relative;
+            float: left;
+            line-height: 1;
+        }
+    }
+}
+
+.movie-details {
+    font-family: $paragraph-font-family;
+    font-size: $text-summary;
+    font-weight: $light;
+    color: darken( $accent-color, 20%);
+    @extend .elements-distance;
+}
+
+.movie-description {
+    font-size: 16;
+    font-weight: $regular;
+    color: #45433d;
+    @extend .elements-distance;
+    text-align: left;
+    line-height: 1.3;
+}
+
+.movie-actors {
+    font-family: $paragraph-font-family;
+    font-size: $text-summary;
+    font-weight: $light;
+    color: $accent-color;
+    font-style: italic;
+    @extend .elements-distance;
+}
+
+.thegrid {
+    margin: 0 auto;
+}
+
+.elements-distance {
+    margin: 0px
+}
+
+.mr-grid {
+    width: 100%;
+}
+
+.mr-grid:before,
+.mr-grid:after {
+    content: "";
+    display: table;
+}
+
+.mr-grid:after {
+    clear: both;
+}
+
+.mr-grid {
+    *zoom: 1;
+}
+
+.col1,
+.col2,
+.col3,
+.col3rest,
+.col4,
+.col4rest,
+.col5,
+.col5rest,
+.col6,
+.col6rest {
+    margin: 0% 0.5% 0.5% 0.5%;
+    padding: 1%;
+    float: left;
+    display: block;
+}
+
+.col1 {
+    width: 98%;
+}
+
+.col2 {
+    width: 47%;
+}
+
+.col3 {
+    width: 30.3333333333%;
+}
+
+.col4 {
+    width: 22%;
+}
+
+.col5 {
+    width: 17%;
+}
+
+.col6 {
+    width: 13.6666666667%;
+}
+
+.col3rest {
+    width: 63.6666666667%;
+}
+
+.col4rest {
+    width: 72%;
+}
+
+.col5rest {
+    width: 77%;
+}
+
+.col6rest {
+    width: 80.3333333333%;
+}
+
+.dribbble-link {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50px;
+}

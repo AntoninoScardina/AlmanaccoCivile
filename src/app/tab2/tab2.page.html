@@ -1,0 +1,27 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
+
+
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center custom-font" style="padding-top: 18px;">
+      Tendenze
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+ 
+<div class="container">
+  <center>
+    <div class="card" id="cardEvento" *ngFor="let data of this.eventsData" (click)="dataPassi(data)">
+      <h2> {{ data.titolo.slice(1, -1)}} </h2>
+      <p>{{ data["data"]}}</p>
+    </div>
+  </center>
+</div>
+
+
+</ion-content>
