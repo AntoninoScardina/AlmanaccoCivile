@@ -22,7 +22,11 @@
     background-color: white;
     border-radius: 10px;
     
-    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
   }
   
   .card h2 {
@@ -30,16 +34,12 @@
     font-family: 'Hind', sans-serif;
     font-weight: 900;
     font-size: 18px;
-    margin: 10px 0px 8px -2px;
   }
 
    .card p {
     color: black;
     font-size: 17px;
   }
-  
-  
-  
   
   .card .el {
     vertical-align: -2px;
