@@ -16,19 +16,24 @@
         <form class="ion-padding form">
 
             <div class="wrap-input">
-                <input class="input" type="text" name="nickname" placeholder="Nickname" (input)="validateNick($event.target.value)" [(ngModel)]="nickname">
+                <span class="error" *ngIf="this.userExists">
+                    <i class="material-icons ">
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                    </i>
+                </span>
+                <input required class="input" type="text" name="nickname" placeholder="Nickname" (input)="validateNick($event.target.value)" [(ngModel)]="nickname">
             </div>
 
             <div class="wrap-input">
-                <input class="input" type="text" name="name" placeholder="Nome" [(ngModel)]="nome">
+                <input required class="input" type="text" name="nome" placeholder="Nome" [(ngModel)]="nome">
             </div>
 
             <div class="wrap-input">
-                <input class="input" type="text" name="surname" placeholder="Cognome" [(ngModel)]="cognome">
+                <input required class="input" type="text" name="cognome" placeholder="Cognome" [(ngModel)]="cognome">
             </div>
 
             <div class="wrap-input">
-                <input class="input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+                <input required class="input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
             </div>
 
             <div class="container-form-btn">
@@ -36,14 +41,14 @@
                     A<span style="text-transform: lowercase;">ccedi</span>
                 </button>
                 <div class="divider"></div>
-                <button class="form-btn custom-font" (click)="registrati()">
+                <button class="form-btn custom-font" type="submit" value="submit" (click)="registrati()">
                     R<span style="text-transform: lowercase;">egistrati</span>
                 </button>
             </div>
             <br>
 
             <div class="container-form-btn-guest" style="z-index: 2;position: absolute;">
-                <button class="form-btn custom-font" (click)="GuestAccess()">
+                <button class="form-btn custom-font" (click)="guestAccess()">
                     E<span style="text-transform: lowercase;">ntra come utente</span>
                 </button>
             </div>
@@ -59,9 +64,4 @@
             <p class="footerText custom-font">Almanacco Civile - ©2021</p>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-    </script>
-
 </ion-content>

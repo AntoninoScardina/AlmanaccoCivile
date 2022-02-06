@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
 const { findAncestor, WatchDirectoryFlags } = require("typescript");
 
-const port = 3001;
+const port = 3000;
 
 const bcryptInfo = {
     saltRounds: 10

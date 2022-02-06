@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import axios from "axios";
+import { ToastController } from '@ionic/angular';
+import axios from 'axios';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,27 +14,40 @@ export class RegisterPage implements OnInit {
   private nome: string;
   private cognome: string;
   private password: string;
+  private userExists: boolean;
 
-  constructor(private Router:Router) {  
+  constructor(private Router:Router, public toastController: ToastController) {  
   }
 
   ngOnInit() {
   }
 
-  GuestAccess(){
+  guestAccess(){
     this.Router.navigateByUrl('tabs');
+    localStorage.setItem('guest', 'true');
   }
-  
 
   homepagescreen(){
     this.Router.navigateByUrl('login');
     localStorage.clear();
-    localStorage.setItem("Guest", "True");
   }
 
-  registrati(){
+  validInput() {
+    return this.nickname && this.nome && this.cognome && this.password;
+  }
+
+  async registrati() {
+    if (!this.validInput()) {
+      const toast = await this.toastController.create({
+        message: 'I campi di input non sono stati immessi correttamente. ',
+        duration: 2000
+      });
+      toast.present();
+      return;
+    }
+
     axios
-    .post(`${environment.baseURL}/register`, { 
+    .post(`${environment.baseURL}/register`, {
       nickname: this.nickname,
       nome: this.nome,
       cognome: this.cognome,
@@ -50,8 +64,7 @@ export class RegisterPage implements OnInit {
             },
           },
         };
-        
-        localStorage.setItem('logged', "true");
+        localStorage.setItem('logged', 'true');
 
         // SECURITY LEVEL: MASTER
         localStorage.setItem('nickname', this.nickname);
@@ -65,7 +78,10 @@ export class RegisterPage implements OnInit {
     });
   }
 
-  validateNick(targetValue) {
-    console.log(targetValue);
+  async validateNick(targetValue) {
+    try {
+      const user = (await axios.get(`${environment.baseURL}/user/${targetValue}`)).data;
+      this.userExists = Boolean(user.data);
+    } catch (_) { console.log(_); }
   }
 }

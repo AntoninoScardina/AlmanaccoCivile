@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import axios from 'axios';
 import { environment } from 'src/environments/environment';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-evento-page',
@@ -21,7 +22,8 @@ export class EventoPagePage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private favsService: FavsSingletonService
+    private favsService: FavsSingletonService,
+    public toastController: ToastController
   ) {
     this.route.queryParams.subscribe(async (params) => {
       const state = this.router.getCurrentNavigation().extras.state;
@@ -91,11 +93,19 @@ export class EventoPagePage implements OnInit {
   }
 
   async AORFavorite() {
-    if (await this.isFavorite()) {
-      this.rimuoviPreferiti();
+    if (!localStorage.getItem('guest')) {
+      if (await this.isFavorite()) {
+        this.rimuoviPreferiti();
+      } else {
+        this.aggiungiPreferiti();
+      }
+      this.favsService.reload_load();
     } else {
-      this.aggiungiPreferiti();
+      const toast = await this.toastController.create({
+        message: 'Devi essere registrato per poter salvare gli eventi nei preferiti.',
+        duration: 2000
+      });
+      toast.present();
     }
-    this.favsService.reload_load();
   }
 }

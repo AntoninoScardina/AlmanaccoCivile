@@ -8,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.page.scss'],
 })
 export class InfoPage implements OnInit {
+  public nickname: string;
 
-  constructor(private Router : Router) { }
+  constructor(private Router : Router) { 
+    this.nickname = localStorage.getItem('nickname') ? localStorage.getItem('nickname') : 'Rocco'; 
+  }
 
   ngOnInit() {
   }
 
   LogOut(){
     localStorage.clear();
-    this.Router.navigateByUrl("home-screen");
+    this.Router.navigateByUrl('register');
   }
 
 }
