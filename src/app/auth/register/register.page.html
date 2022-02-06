@@ -16,7 +16,7 @@
         <form class="ion-padding form">
 
             <div class="wrap-input">
-                <input id="nickname" class="input" type="text" name="nickname" placeholder="Nickname" [(ngModel)]="nickname">
+                <input class="input" type="text" name="nickname" placeholder="Nickname" (input)="validateNick($event.target.value)" [(ngModel)]="nickname">
             </div>
 
             <div class="wrap-input">
@@ -62,10 +62,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.getElementById('nickname')
-            .addEventListener('change', (evt) => {
-                console.log(evt);
-            });
     </script>
 
 </ion-content>

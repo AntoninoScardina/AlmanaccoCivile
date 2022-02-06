@@ -62,6 +62,10 @@ export class RegisterPage implements OnInit {
     })
     .catch((err) => {
       console.log(err);
-    });    
+    });
+  }
+
+  validateNick(targetValue) {
+    console.log(targetValue);
   }
 }
