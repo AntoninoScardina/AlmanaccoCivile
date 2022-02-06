@@ -38,17 +38,20 @@ export class Tab1Page {
 
   ngOnInit(): void {
     bubble();
+    this.getEvents();
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+  }
 
   getEvents() {
     const giornoMeseAnno =
-      document.querySelector('#clicked').textContent.trim() +
+      (document.querySelector('#clicked') ? document.querySelector('#clicked') : document.querySelector('.curr-date')).textContent.trim() +
       ' ' +
       document.querySelector('#month-picker').textContent +
       ' ' +
       document.querySelector('#year').textContent;
+    console.log(`${environment.baseURL}/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`);
     axios
       .get(
         `${environment.baseURL}/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`
