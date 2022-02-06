@@ -11,4 +11,4 @@ Durante i mesi più caldid dell'anno
 7. Non sono superstizioso
 8. Le mie ultime parole
 
-<h1> Arruginisci in pace... Dinastia <h1>
+# Arruginisci in pace... Dinastia
