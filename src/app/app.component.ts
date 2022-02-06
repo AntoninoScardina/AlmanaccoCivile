@@ -23,7 +23,7 @@ export class AppComponent {
         
         this.Router.navigateByUrl('tabs');
       }else{
-        this.Router.navigateByUrl('register'); 
+        this.Router.navigateByUrl('register');
       }
          
     });

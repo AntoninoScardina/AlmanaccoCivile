@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from "axios";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class FavsSingletonService {
   public reload_load() {
     axios
     .get(
-      `http://185.25.207.172:3000/favs/${localStorage.getItem('nickname')}`
+      `${environment.baseURL}/favs/${localStorage.getItem('nickname')}`
       )
     .then((res) => {
       this.favs = res.data['favs'];
@@ -25,7 +26,7 @@ export class FavsSingletonService {
   }
 
   public async getFavs() {
-    let favs = (await axios.get(`http://185.25.207.172:3000/favs/${localStorage.getItem('nickname')}`)).data['favs'];
+    let favs = (await axios.get(`${environment.baseURL}/favs/${localStorage.getItem('nickname')}`)).data['favs'];
     
     return favs;  
   }

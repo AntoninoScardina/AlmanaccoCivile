@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import axios from "axios";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -32,7 +33,7 @@ export class RegisterPage implements OnInit {
 
   registrati(){
     axios
-    .post(`http://localhost:3000/register`, { 
+    .post(`${environment.baseURL}/register`, { 
       nickname: this.nickname,
       nome: this.nome,
       cognome: this.cognome,

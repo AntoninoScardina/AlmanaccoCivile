@@ -2,8 +2,7 @@ import { StorageServiceService } from './../../storage-service.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import axios from "axios";
-
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +26,7 @@ export class LoginPage implements OnInit {
 
   Accedi() {
     axios
-    .post(`http://localhost:3000/login`, {
+    .post(`${environment.baseURL}/login`, {
       nickname: this.nickname,
       password: this.password,
     })

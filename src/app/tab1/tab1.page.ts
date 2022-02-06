@@ -9,7 +9,9 @@ import { Component, ViewChild } from '@angular/core';
 import axios from 'axios';
 import * as bubble from './bubble.js';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
+axios.defaults.withCredentials = true;
 
 @Component({
   selector: 'app-tab1',
@@ -33,12 +35,12 @@ export class Tab1Page {
     Novembre: 11,
     Dicembre: 12,
   };
-    
-  ngOnInit(): void{
+
+  ngOnInit(): void {
     bubble();
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   getEvents() {
     const giornoMeseAnno =
@@ -49,12 +51,11 @@ export class Tab1Page {
       document.querySelector('#year').textContent;
     axios
       .get(
-    `http://185.25.207.172:3000/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`
-       
-        )
+        `${environment.baseURL}/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`
+      )
       .then((res) => {
         this.eventsData = res.data['events'];
-        console.log(res)
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);

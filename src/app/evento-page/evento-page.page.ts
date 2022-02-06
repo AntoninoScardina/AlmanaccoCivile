@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import axios from 'axios';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-evento-page',
@@ -38,9 +39,9 @@ export class EventoPagePage implements OnInit {
     //
     let exists: boolean;
     try {
-      const result = await axios.get(`http://localhost:3000/favs/${nick}`);
+      const result = await axios.get(`${environment.baseURL}/favs/${nick}`);
       exists = result.data.favs.some((fav: any) => this.eventData['titolo'] === fav['titolo']);
-    } catch (_) { console.error(_) }
+    } catch (_) { console.error(_); }
     //
     console.log("VIVA: ", exists);
     return exists;
@@ -48,7 +49,7 @@ export class EventoPagePage implements OnInit {
 
   aggiungiPreferiti(){
     axios
-    .post(`http://localhost:3000/add_fav`, {
+    .post(`${environment.baseURL}/add_fav`, {
       nickname: localStorage.getItem('nickname'),
       id: this.eventId,
     })
@@ -67,7 +68,7 @@ export class EventoPagePage implements OnInit {
 
   rimuoviPreferiti() {
     axios
-    .post(`http://localhost:3000/rem_fav`, {
+    .post(`${environment.baseURL}/rem_fav`, {
       nickname: localStorage.getItem('nickname'),
       id: this.eventId,
     })

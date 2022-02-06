@@ -7,20 +7,23 @@ const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
 const { findAncestor, WatchDirectoryFlags } = require("typescript");
 
-const port = 3000;
+const port = 3001;
 
 const bcryptInfo = {
     saltRounds: 10
 };
 
 app.use(cors({
-    origin: '*'
+    // TODO FIX
+    // origin: '*',
+    origin: 'https://4200-antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io',
+    credentials: true,
 }));
 
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'mydb',
+    database: 'AlmanaccoCivile',
     password: ''
 });
 connection.connect();
