@@ -51,7 +51,6 @@ export class Tab1Page {
       document.querySelector('#month-picker').textContent +
       ' ' +
       document.querySelector('#year').textContent;
-    console.log(`${environment.baseURL}/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`);
     axios
       .get(
         `${environment.baseURL}/event/${giornoMeseAnno.split(' ')[0]}?month=${this.months[giornoMeseAnno.split(' ')[1]]}`
