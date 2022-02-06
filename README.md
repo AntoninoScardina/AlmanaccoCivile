@@ -1,2 +1,2 @@
 # AlmanaccoCivile
-Buon lutto / Venerdì Nero
+Condoglianze / Venerdì Nero
