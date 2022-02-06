@@ -14,20 +14,14 @@ export class AppComponent {
   // public rootPage: any;
   login = 'login';
   register = 'register';
-  
 
-  constructor(private platform: Platform, private Router: Router,) {
-
-    platform.ready().then(async() => {
-      if(localStorage.getItem("logged") === "true") {
-        
+  constructor(private platform: Platform, private Router: Router) {
+    platform.ready().then(async () => {
+      if (localStorage.getItem('logged') === 'true') {
         this.Router.navigateByUrl('tabs');
-      }else{
+      } else{
         this.Router.navigateByUrl('register');
       }
-         
     });
   }
-  
- 
 }

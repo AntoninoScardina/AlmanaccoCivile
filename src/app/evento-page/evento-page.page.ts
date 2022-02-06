@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/dot-notation */
 import { FavsSingletonService } from './../favs-singleton.service';
 import { Tab3Page } from './../tab3/tab3.page';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./evento-page.page.scss'],
 })
 export class EventoPagePage implements OnInit {
-  public eventData = []
+  public eventData = [];
   public nickname: string;
   public eventId: number;
   public iconName: string;
@@ -43,7 +44,7 @@ export class EventoPagePage implements OnInit {
       exists = result.data.favs.some((fav: any) => this.eventData['titolo'] === fav['titolo']);
     } catch (_) { console.error(_); }
     //
-    console.log("VIVA: ", exists);
+    console.log('VIVA: ', exists);
     return exists;
   }
 
@@ -86,7 +87,7 @@ export class EventoPagePage implements OnInit {
   }
 
   info(){
-    this.router.navigate(["info"]);
+    this.router.navigate(['info']);
   }
 
   async AORFavorite() {
@@ -97,5 +98,4 @@ export class EventoPagePage implements OnInit {
     }
     this.favsService.reload_load();
   }
-
 }
