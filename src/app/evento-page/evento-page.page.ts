@@ -40,7 +40,9 @@ export class EventoPagePage implements OnInit {
 
   async increateViews(eventId) {
     try {
-      await axios.get(`${environment.baseURL}/increase_v/${eventId}`);
+      await axios.post(`${environment.baseURL}/increase_v/`, {
+        id: eventId,
+      });
     } catch (_) { console.error(_); }
   }
 
