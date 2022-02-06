@@ -32,10 +32,17 @@ export class EventoPagePage implements OnInit {
       }
       this.eventId = this.eventData['idevento'];
       this.iconName = await this.isFavorite() ? 'star' : 'star-outline';
+      await this.increateViews(this.eventId);
     });
   }
 
   ngOnInit() { }
+
+  async increateViews(eventId) {
+    try {
+      await axios.get(`${environment.baseURL}/increase_v/${eventId}`);
+    } catch (_) { console.error(_); }
+  }
 
   async isFavorite() {
     const nick = localStorage.getItem('nickname');
@@ -46,7 +53,6 @@ export class EventoPagePage implements OnInit {
       exists = result.data.favs.some((fav: any) => this.eventData['titolo'] === fav['titolo']);
     } catch (_) { console.error(_); }
     //
-    console.log('VIVA: ', exists);
     return exists;
   }
 
@@ -92,6 +98,7 @@ export class EventoPagePage implements OnInit {
     this.router.navigate(['info']);
   }
 
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   async AORFavorite() {
     if (!localStorage.getItem('guest')) {
       if (await this.isFavorite()) {

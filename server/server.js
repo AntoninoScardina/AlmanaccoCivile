@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt');
 const { findAncestor, WatchDirectoryFlags } = require("typescript");
 
 const port = 3000;
+const authKey = 'TS[R@#*EA%&/%&/%A&/v567sv%>&/%&/vsafg%S6';
 
 const bcryptInfo = {
     saltRounds: 10
@@ -121,6 +122,27 @@ app.post('/register', (req, res) => {
     query(`INSERT INTO utente () VALUES ('${info.nickname}', '${info.nome}', '${info.cognome}', '${password}', 1);`).then((rows) => {
         res.json({ res: 'ok' });
     }, err => console.error(err));
+});
+
+app.post('/increase_v', (req, res) => {
+    const info = {
+        id_post: req.body.id
+    };
+    query(`UPDATE evento SET visualizzazioni = visualizzazioni + 1 WHERE idevento = ${info.id_post};`).then((rows) => {
+        res.json({ res: 'ok' });
+    }, err => console.error(err));
+});
+
+// mmmh
+app.get('/hot_events', (req, res) => {
+    query(`
+        select idevento, titolo, descrizione, path_immagine, link_articolo, visualizzazioni, rilevanza, DATE_FORMAT(data, '%d/%m/%Y') as data
+        from evento 
+        inner join data_evento on fk_iddata_evento = iddata_evento 
+        order by visualizzazioni DESC limit 10
+    `).then((rows) => {
+        res.json({ events: rows });
+    }, err => console.error(err)); 
 });
 
 app.post('/login', (req, res) => { 
