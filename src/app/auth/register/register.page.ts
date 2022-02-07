@@ -81,6 +81,7 @@ export class RegisterPage implements OnInit {
   async validateNick(targetValue) {
     try {
       const user = (await axios.get(`${environment.baseURL}/user/${targetValue}`)).data;
+      console.log(user);
       this.userExists = Boolean(user.data);
     } catch (_) { console.log(_); }
   }

@@ -11,8 +11,6 @@ import * as bubble from './bubble.js';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-axios.defaults.withCredentials = true;
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
