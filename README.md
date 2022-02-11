@@ -18,3 +18,5 @@ Dinastia prese il primo reattore nucleare che trovò a portata di mano e inizio 
 Dinastia arrivò finalmente nell'isola, ma non appena arrivò sentì subito un cattivo presagio, ma è qui che Dinastia si ricordo di non essere supersizioso e quindi pronunciò "DINASTIA ARRUGINIRà IN PACE PER SEMPRE" come sue ultime parole, prima di sprofondare insieme all'isola, per sempre.
 
 https://antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io/
+
+https://prod.liveshare.vsengsaas.visualstudio.com/join?DF9E78EC1B940D3EBE8DCCDBDA953349FEBF
