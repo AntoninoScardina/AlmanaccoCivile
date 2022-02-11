@@ -4,7 +4,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="light " id="body">
+<ion-content [fullscreen]="true" class="light" id="body">
     <div class="calendar">
         <div class="calendar-header">
             <span class="month-picker" id="month-picker">February</span>
@@ -27,10 +27,10 @@
         <div class="month-list"></div>
     </div>
 
-    <div class="container">
+    <div class="container" id="eventsContainer">
         <center> <!-- faccio finta di non aver visto -->
             <div class="card" id="cardEvento" *ngFor="let data of this.eventsData" (click)="dataPassi(data)">
-                <h2> {{ data.titolo }} </h2>
+                <h2> {{ data.titolo.slice(1 , -1) }} </h2>
                 <p>{{ data["data"]}}</p>
             </div>
         </center>

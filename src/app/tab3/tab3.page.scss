@@ -3,10 +3,10 @@
     font-family: 'Hind', sans-serif;
 }
  ion-content{
-  
-    --background: rgb(235, 235, 235);
+  --background: rgb(235, 235, 235);
    
-.card {
+  .card {
+    word-wrap: break-word;
     display: block;
     margin: 0 auto;
     margin-top: 10px;
@@ -15,25 +15,31 @@
     color: black;
     position: relative;
     width: 50%;
-    max-height: 70px;
+    height: 100%;
+    
     transform: scale(0.8);
     background-color: white;
     border-radius: 10px;
     
-    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
   }
-  
+    
   .card h2 {
     color: black;
     font-family: 'Hind', sans-serif;
     font-weight: 900;
     font-size: 18px;
-    margin: 10px 0px 8px -2px;
   }
-  
-  
-  
-  
+
+  .card p {
+    color: black;
+    font-size: 17px;
+  }
+
   .card .el {
     vertical-align: -2px;
     opacity: 0.3;

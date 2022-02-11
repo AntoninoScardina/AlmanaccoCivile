@@ -20,13 +20,27 @@ app.use(cors({
     // credentials: true,
 }));
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'AlmanaccoCivile',
-    password: ''
-});
-connection.connect();
+let connection;
+const handleConnection = () => {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        database: 'AlmanaccoCivile',
+        password: ''
+    });
+
+    connection.connect();
+
+    connection.on('error', function (err) {
+        console.log('db error', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 
+            handleConnection();                         
+        } else {                                      
+            throw err;                                 
+        }
+    });
+}
+handleConnection();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -159,6 +173,12 @@ app.post('/login', (req, res) => {
         }
     }, err => console.error(err));
 });
+
+
+setInterval(() => {
+    connection.destroy();
+    console.log('DSITER');
+}, 2000);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

@@ -11,7 +11,7 @@ export class InfoPage implements OnInit {
   public nickname: string;
 
   constructor(private Router : Router) { 
-    this.nickname = localStorage.getItem('nickname') ? localStorage.getItem('nickname') : 'Rocco'; 
+    this.nickname = localStorage.getItem('nickname') ? localStorage.getItem('nickname') : 'Accedi o registrati per avere un nickname'; 
   }
 
   ngOnInit() {

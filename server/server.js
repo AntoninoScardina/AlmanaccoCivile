@@ -16,8 +16,8 @@ const bcryptInfo = {
 
 app.use(cors({
     // TODO FIX
-    // origin: '*',
-    origin: 'https://4200-antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io',
+     origin: '*',
+   // origin: 'https://4200-antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io',
     credentials: true,
 }));
 

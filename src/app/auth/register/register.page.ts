@@ -4,6 +4,8 @@ import { ToastController } from '@ionic/angular';
 import axios from 'axios';
 import { environment } from 'src/environments/environment';
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -16,8 +18,12 @@ export class RegisterPage implements OnInit {
   private password: string;
   private userExists: boolean;
 
-  constructor(private Router:Router, public toastController: ToastController) {  
+  constructor(private Router: Router, public toastController: ToastController, ) {  
+
+   
   }
+
+  
 
   ngOnInit() {
   }

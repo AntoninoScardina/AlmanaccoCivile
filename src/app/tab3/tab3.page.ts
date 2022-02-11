@@ -22,7 +22,7 @@ export class Tab3Page {
       this.favs = await this.favsService.getFavs();
       console.log(this.favs);
       event.target.complete();
-    }, 2000);
+    }, 1000);
   }
   
   async dataPassi(eventData) {

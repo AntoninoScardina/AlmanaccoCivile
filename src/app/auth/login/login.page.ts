@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import axios from "axios";
 import { environment } from 'src/environments/environment';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginPage implements OnInit {
   password: string;
   
 
-  constructor(private Router: Router,private storageServiceService: StorageServiceService) {
+  constructor(private Router: Router, public toastController: ToastController, private storageServiceService: StorageServiceService) {
   }
 
   ngOnInit() {
@@ -24,7 +25,20 @@ export class LoginPage implements OnInit {
     this.Router.navigateByUrl("register")
   }
 
-  Accedi() {
+  validInput() {
+    return this.nickname && this.password;
+  }
+
+  async Accedi() {
+    if (!this.validInput()) {
+      const toast = await this.toastController.create({
+        message: 'I campi di input non sono stati immessi correttamente. ',
+        duration: 2000
+      });
+      toast.present();
+      return;
+    }
+
     axios
     .post(`${environment.baseURL}/login`, {
       nickname: this.nickname,

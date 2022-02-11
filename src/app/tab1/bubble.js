@@ -65,7 +65,6 @@ module.exports = (function(){
         month.querySelector('div').onclick = () => {
             month_list.classList.remove('show')
             curr_month.value = index
-            console.log(curr_month)
             generateCalendar(index, curr_year.value)
         }
         month_list.appendChild(month)

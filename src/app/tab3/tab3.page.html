@@ -9,9 +9,11 @@
             Post salvati
         </ion-title>
     </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
+    
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
             refreshingSpinner="circles" refreshingText="Refreshing...">
@@ -22,10 +24,9 @@
         <center>
             <div class="card" id="cardEvento" *ngFor="let data of this.favs" (click)="dataPassi(data)">
                 <h2> {{ this.data.titolo.slice(1, -1)}} </h2>
-                <p>{{ this.data["data"]}}</p>
+                <p>{{ this.data.data }}</p>
             </div>
         </center>
     </div>
-
 
 </ion-content>

@@ -17,7 +17,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
   public eventsData = [];
   public months = {
     Gennaio: 1,
