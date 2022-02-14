@@ -34,6 +34,7 @@ const handleConnection = () => {
     connection.on('error', function (err) {
         console.log('db error', err);
         if (err.code === 'PROTOCOL_CONNECTION_LOST') { 
+            console.log('riconnessione... yeah');
             handleConnection();                         
         } else {                                      
             throw err;                                 
@@ -173,12 +174,6 @@ app.post('/login', (req, res) => {
         }
     }, err => console.error(err));
 });
-
-
-setInterval(() => {
-    connection.destroy();
-    console.log('DSITER');
-}, 2000);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
