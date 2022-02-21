@@ -20,3 +20,5 @@ Dinastia arrivò finalmente nell'isola, ma non appena arrivò sentì subito un c
 https://antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io/
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?DF9E78EC1B940D3EBE8DCCDBDA953349FEBF
+
+https://prod.liveshare.vsengsaas.visualstudio.com/join?A794A340E227375198A6AD4C8F874BBB0E70
