@@ -1,38 +1,38 @@
-module.exports = (function(){
+module.exports = (function() {
     let calendar = document.querySelector('.calendar')
 
     const month_names = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
-    
+
     isLeapYear = (year) => {
-        return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
+        return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
     }
-    
+
     getFebDays = (year) => {
         return isLeapYear(year) ? 29 : 28
     }
-    
-    generateCalendar = (month, year) => {    
+
+    generateCalendar = (month, year) => {
         let calendar_days = calendar.querySelector('.calendar-days')
         let calendar_header_year = calendar.querySelector('#year')
-    
+
         let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    
+
         calendar_days.innerHTML = ''
-        
+
         /*
         let currDate = new Date()
         if (!month) month = currDate.getMonth()
         if (!year) year = currDate.getFullYear()
         */
-    
+
         let curr_month = `${month_names[month]}`
         month_picker.innerHTML = curr_month
         calendar_header_year.innerHTML = year
-    
+
         // get first day of month
-        
+
         let first_day = new Date(year, month, 1)
-    
+
         for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
             let day = document.createElement('div')
             if (i >= first_day.getDay()) {
@@ -47,18 +47,18 @@ module.exports = (function(){
                 }
             }
             day.addEventListener('click', () => {
-                    const el = document.querySelector('#clicked')
-                    if (el) {
-                        el.id = ''
-                    }
-                    day.id = 'clicked'
-                });
+                const el = document.querySelector('#clicked')
+                if (el) {
+                    el.id = ''
+                }
+                day.id = 'clicked'
+            });
             calendar_days.appendChild(day)
         }
     }
-    
+
     let month_list = calendar.querySelector('.month-list')
-    
+
     month_names.forEach((e, index) => {
         let month = document.createElement('div')
         month.innerHTML = `<div data-month="${index}">${e}</div>`
@@ -69,17 +69,17 @@ module.exports = (function(){
         }
         month_list.appendChild(month)
     })
-    
+
     let month_picker = calendar.querySelector('#month-picker')
-    
+
     month_picker.onclick = () => {
         month_list.classList.add('show')
     }
-    
+
     let currDate = new Date()
-    
-    let curr_month = {value: currDate.getMonth()}
-    let curr_year = {value: currDate.getFullYear()}
-    
+
+    let curr_month = { value: currDate.getMonth() }
+    let curr_year = { value: currDate.getFullYear() }
+
     generateCalendar(curr_month.value, curr_year.value)
 })

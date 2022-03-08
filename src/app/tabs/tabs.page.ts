@@ -8,13 +8,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
+  public isGuest: boolean;
 
-  constructor(private Router: Router) {
-
+  constructor(private router: Router) {
+    this.isGuest = localStorage.getItem('guest') === 'true';
   }
 
-  InfoPage(){
-    this.Router.navigateByUrl('info')
+  infoPage() {
+    this.router.navigateByUrl('info');
   }
-
 }
+// DNO

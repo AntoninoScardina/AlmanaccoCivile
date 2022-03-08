@@ -1,10 +1,4 @@
 import { NavigationExtras, Router } from '@angular/router';
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable @angular-eslint/use-lifecycle-interface */
-/* eslint-disable @typescript-eslint/dot-notation */
-/* eslint-disable @typescript-eslint/member-ordering */
-/* eslint-disable @typescript-eslint/naming-convention */
-// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 import { Component, ViewChild } from '@angular/core';
 import axios from 'axios';
 import * as bubble from './bubble.js';
@@ -34,6 +28,7 @@ export class Tab1Page {
   };
 
   ngOnInit(): void {
+   
     bubble();
     this.getEvents();
   }
@@ -59,6 +54,13 @@ export class Tab1Page {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  
+  
+
+  resetEvents() {
+    this.eventsData = [];
   }
 
   async dataPassi(eventData) {

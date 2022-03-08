@@ -8,7 +8,7 @@
             <fa-icon icon="fire" style="font-size: 25px;"></fa-icon>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3">
+        <ion-tab-button tab="tab3" *ngIf="!this.isGuest">
             <fa-icon icon="bookmark" style="font-size: 25px;"></fa-icon>
         </ion-tab-button>
 

@@ -1,11 +1,12 @@
 <ion-header>
-    <ion-toolbar class="new-background-color">
-        <ion-searchbar showCancelButton="always" class="searchbar" placeholder="Cerca giorno" showCancelButton="never"></ion-searchbar>
-    </ion-toolbar>
+
+
 </ion-header>
 
 <ion-content [fullscreen]="true" class="light" id="body">
-    <div class="calendar">
+
+    <img src="../../assets/logo removed.png" alt="" width="100px" height="100px" class="imageLogo">
+    <div class="calendar" id="calendar">
         <div class="calendar-header">
             <span class="month-picker" id="month-picker">February</span>
             <div class="year-picker">
@@ -24,15 +25,23 @@
             </div>
             <div class="calendar-days" (click)="getEvents()"></div>
         </div>
-        <div class="month-list"></div>
+        <div class="month-list" (click)="resetEvents()"></div>
     </div>
 
+
+
+
     <div class="container" id="eventsContainer">
-        <center> <!-- faccio finta di non aver visto -->
+        <center>
             <div class="card" id="cardEvento" *ngFor="let data of this.eventsData" (click)="dataPassi(data)">
                 <h2> {{ data.titolo.slice(1 , -1) }} </h2>
                 <p>{{ data["data"]}}</p>
             </div>
         </center>
     </div>
+
+
+    <script>
+        jQuery("#calendar").fitText(8);
+    </script>
 </ion-content>

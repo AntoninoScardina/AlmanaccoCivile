@@ -1,7 +1,7 @@
 import { RegisterPage } from './auth/register/register.page';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Platform } from "@ionic/angular";
+import { Platform } from '@ionic/angular';
 import { LoginPage } from './auth/login/login.page';
 
 
@@ -15,8 +15,11 @@ export class AppComponent {
   login = 'login';
   register = 'register';
 
+
   constructor(private platform: Platform, private Router: Router) {
     platform.ready().then(async () => {
+     
+
       if (localStorage.getItem('logged') === 'true') {
         this.Router.navigateByUrl('tabs');
       } else{
