@@ -5,16 +5,15 @@
 </ion-header>
 
 <ion-content>
-
-
     <div class="profilo">
-        <img src="../../assets/user.svg" alt="">
+        <img src="../../assets/user.svg" alt="DINASTIA">
         <ion-title class="nickname">{{ this.nickname }}</ion-title>
         <br>
-        <ion-button class="btncolor" (click)="LogOut()">Log Out</ion-button>
+        <ion-button class="btncolor" (click)="LogOut()" *ngIf="!this.isGuest; else guest">Log Out</ion-button>
+        <ng-template #guest>
+            <ion-button class="btncolor" (click)="LogOut()">Ritorna al Login</ion-button>
+        </ng-template>
         <br><br>
         <ion-title class="nickname2">Created by <br><span style="font-weight: bold;">Alongi Diego Flavio & Scardina Antonino</span></ion-title>
     </div>
-
-
 </ion-content>

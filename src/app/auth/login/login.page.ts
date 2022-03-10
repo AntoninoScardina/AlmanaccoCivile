@@ -44,7 +44,8 @@ export class LoginPage implements OnInit {
       nickname: this.nickname,
       password: this.password,
     })
-    .then((res) => {
+    .then(async (res) => {
+      console.log(res.data.data)
       if (res.data.data === 'ok') {
         console.log('login...');
 
@@ -54,7 +55,11 @@ export class LoginPage implements OnInit {
 
         this.Router.navigateByUrl('tabs');
       } else {
-        console.log('login non riuscito...');
+        const toast = await this.toastController.create({
+          message: 'Username o Password non corretti. ',
+          duration: 2000
+        });
+        toast.present();
       }
     })
     .catch((err) => {

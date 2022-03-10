@@ -33,11 +33,11 @@ module.exports = (function() {
 
         let first_day = new Date(year, month, 1)
 
-        for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+        for (let i = 1; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
             let day = document.createElement('div')
             if (i >= first_day.getDay()) {
                 day.classList.add('calendar-day-hover')
-                day.innerHTML = i - first_day.getDay() + 1
+                day.innerHTML = (month === 4 && i === 1 ? 0 : i) - first_day.getDay() + 1
                 day.innerHTML += `<span></span>
                                 <span></span>
                                 <span></span>

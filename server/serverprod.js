@@ -166,12 +166,11 @@ app.post('/login', (req, res) => {
     query(`
         select password from utente where nickname = '${info.nickname}'
     `).then((rows) => {
-        console.log(req.body.password);
-        if (bcrypt.compareSync(req.body.password, rows[0].password)) {
-            res.json({ data: 'ok' });
-        } else {
+        if (!rows[0]) {
             res.json({ data: 'non ok' });
-        }
+        } else if (bcrypt.compareSync(req.body.password, rows[0].password)) {
+            res.json({ data: 'ok' });
+        } 
     }, err => console.error(err));
 });
 
