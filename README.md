@@ -17,8 +17,4 @@ Dinastia si alzo dal letto immediatamente, decise di prendere il primo volo per 
 Dinastia prese il primo reattore nucleare che trovò a portata di mano e inizio il suo viaggio: nel mentre che viaggiava tranquillamente decise di sfidare a Magnus Carlsen in una partita di scacchi, l'incontro non durò molto: Magnus gli tirò un cavallo in testa a Dinastia, ma lui gli rispose augurandogli un buon lutto, dicendo anche che il venerdì nero sta per arrivare. 
 Dinastia arrivò finalmente nell'isola, ma non appena arrivò sentì subito un cattivo presagio, ma è qui che Dinastia si ricordo di non essere supersizioso e quindi pronunciò "DINASTIA ARRUGINIRà IN PACE PER SEMPRE" come sue ultime parole, prima di sprofondare insieme all'isola, per sempre.
 
-https://antoninoscardin-almanacc-whoxzp4i6jz.ws-eu30.gitpod.io/
-
-https://prod.liveshare.vsengsaas.visualstudio.com/join?DF9E78EC1B940D3EBE8DCCDBDA953349FEBF
-
-https://prod.liveshare.vsengsaas.visualstudio.com/join?A794A340E227375198A6AD4C8F874BBB0E70
+https://lh3.googleusercontent.com/-3j0Z3oyYW80/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnGog8SGk0LGlQeNpo8DYUHAeesuA/s128-c/photo.jpg
