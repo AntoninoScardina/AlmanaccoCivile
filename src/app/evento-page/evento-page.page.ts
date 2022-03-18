@@ -31,6 +31,9 @@ export class EventoPagePage implements OnInit {
         this.eventData = state.event_data;
       }
       this.eventId = this.eventData['idevento'];
+      if (this.eventData['path_immagine'].startsWith('http://')) {
+        this.eventData['path_immagine'] = this.eventData['path_immagine'].replace('http://', 'https://'); 
+      }
       this.iconName = await this.isFavorite() ? 'star' : 'star-outline';
       await this.increateViews(this.eventId);
     });
