@@ -8,7 +8,7 @@
 
 <ion-content>
     <div class="profilo">
-        <img src="../../assets/user.svg" alt="DINASTIA">
+        <img src="{{ this.imageUrl }}" alt="DINASTIA">
         <ion-title class="nickname">{{ this.nickname }}</ion-title>
         <br>
         <ion-button class="btncolor" (click)="LogOut()" *ngIf="!this.isGuest; else guest">Log Out</ion-button>
