@@ -37,7 +37,7 @@ module.exports = (function() {
             let day = document.createElement('div')
             if (i >= first_day.getDay()) {
                 day.classList.add('calendar-day-hover')
-                day.innerHTML = (month === 4 && i === 1 ? 0 : i) - first_day.getDay() + 1
+                day.innerHTML = (month !== 4 ? i + 1 : i) - first_day.getDay()
                 day.innerHTML += `<span></span>
                                 <span></span>
                                 <span></span>
